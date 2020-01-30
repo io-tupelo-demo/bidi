@@ -11,22 +11,22 @@ See this file for working code examples:  `test/clj/tst/demo/core.clj`
 To run tests:
 
 ```pre
-    > lein clean ; lein test
+> lein clean ; lein test
 ```
 
 with result:
 
 ```pre
-    lein test _bootstrap
+lein test _bootstrap
 
-    -------------------------------
-       Clojure 1.10.1    Java 13
-    -------------------------------
+-------------------------------
+   Clojure 1.10.1    Java 13
+-------------------------------
 
-    lein test tst.demo.core
+lein test tst.demo.core
 
-    Ran 2 tests containing 17 assertions.
-    0 failures, 0 errors.
+Ran 2 tests containing 17 assertions.
+0 failures, 0 errors.
 ```
 
 == License

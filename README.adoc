@@ -14,6 +14,7 @@ To run tests:
 
 with result:
 
+```clojure
     lein test _bootstrap
 
     -------------------------------
@@ -24,6 +25,7 @@ with result:
 
     Ran 2 tests containing 17 assertions.
     0 failures, 0 errors.
+```
 
 == License
 

@@ -10,7 +10,9 @@ See this file for working code examples:  `test/clj/tst/demo/core.clj`
 
 To run tests:
 
+```bash
     > lein clean ; lein test
+```
 
 with result:
 

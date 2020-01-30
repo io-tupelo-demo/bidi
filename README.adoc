@@ -16,7 +16,7 @@ To run tests:
 
 with result:
 
-```text
+```pre
     lein test _bootstrap
 
     -------------------------------

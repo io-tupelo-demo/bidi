@@ -8,7 +8,7 @@ See this file for working code examples:  `test/clj/tst/demo/core.clj`
 
 == Documentation
 
- - See the juxt/bidi homepage at link: https://github.com/juxt/bidi
+ - See the project homepage link:https://github.com/juxt/bidi[on GitHub]
  - See the API docs at link:https://cljdoc.org/d/bidi/bidi[cljdog.org]
 
 == Usage:

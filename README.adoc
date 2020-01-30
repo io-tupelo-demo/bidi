@@ -8,7 +8,7 @@ See this file for working code examples:  `test/clj/tst/demo/core.clj`
 
 == Usage:
 
-> lein clean ; lein test
+    > lein clean ; lein test
 
 == License
 

@@ -14,7 +14,7 @@ To run tests:
 
 with result:
 
-```clojure
+```bash
     lein test _bootstrap
 
     -------------------------------

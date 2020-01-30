@@ -8,7 +8,22 @@ See this file for working code examples:  `test/clj/tst/demo/core.clj`
 
 == Usage:
 
+To run tests:
+
     > lein clean ; lein test
+
+with result:
+
+    lein test _bootstrap
+
+    -------------------------------
+       Clojure 1.10.1    Java 13
+    -------------------------------
+
+    lein test tst.demo.core
+
+    Ran 2 tests containing 17 assertions.
+    0 failures, 0 errors.
 
 == License
 

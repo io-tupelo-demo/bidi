@@ -1,5 +1,5 @@
 
-= Demo Code for juxt/bidi Routing Library
+= Demo Code for the juxt/bidi Routing Library
 
 
 == Overview

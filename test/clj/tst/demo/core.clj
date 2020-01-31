@@ -1,9 +1,7 @@
 (ns tst.demo.core
-  (:use tupelo.core
-        tupelo.test)
+  (:use tupelo.core tupelo.test)
   (:require
-    [bidi.bidi :as bidi]
-    ))
+    [bidi.bidi :as bidi] ))
 
 (dotest
   (let [route ["/index.html" :index]]

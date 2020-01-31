@@ -24,6 +24,14 @@
     (is= (bidi/match-route routes-nested "/articles/article-1.html") {:handler :article-1})
     (is= (bidi/path-for routes-nested :article-1) "/articles/article-1.html"))
 
+  ; how to retrieve path params
+  (let [routes ["/" ; common prefix
+                {"index.html" :index
+                 "articles/"  {"article-index.html"     :article-index
+                               [:art-id "/article.html"] :article-handler}}]]
+    (is= (bidi/match-route routes "/articles/123/article.html")
+      {:route-params {:art-id "123"}, :handler :article-handler})
+    (is= (bidi/path-for routes :article-handler :art-id "123") "/articles/123/article.html"))
 
   ; short version to match GET "/index.html"
   (let [route ["/index.html" {:get :index}]]

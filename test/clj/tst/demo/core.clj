@@ -20,12 +20,10 @@
                   {""             :index ; add a default route so "/" and "/index.html" both => `:index` handler
                    "index.html"   :index
                    "article.html" :article}]]
+    (is= (bidi/match-route routes "/index.html") {:handler :index}) ; normal case
 
-    (is= (bidi/match-route routes "/index.html")
-      {:handler :index})
-
-    (is= nil (bidi/match-route routes "/")) ; plain "/" route is not available, has no default
-    (is= nil (bidi/match-route routes-2 {:handler :index}))) ; Now we get the :index route
+    (is= (bidi/match-route routes "/") nil) ; plain "/" route is not available, has no default
+    (is= (bidi/match-route routes-2 "/") {:handler :index})) ; Now we get the :index route
 
   ; a map in the route tree indicates "branching" among multiple child routes
   (let [routes        ["/" ; common prefix

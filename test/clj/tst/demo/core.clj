@@ -54,6 +54,13 @@
       {:route-params {:art-id "123"}, :handler :article-handler})
     (is= (bidi/path-for routes :article-handler :art-id "123") ; find the route given the handler & a path-param value
       "/articles/123/article.html"))
+  (let [routes ["" {"/foo"    :bar
+                    "/items/" {[:id] :item-do}}]]
+    (is= (bidi/match-route routes "/foo" :request-method :get)
+      {:handler :bar, :request-method :get})
+    (is= (bidi/match-route routes "/items/abc" :request-method :get)
+      {:route-params {:id "abc"}, :handler :item-do, :request-method :get}))
+
 
   ; short version to match GET "/index.html"
   (let [route ["/index.html" {:get :index}]]
@@ -91,14 +98,8 @@
     (is= (bidi/match-route route "/zip" :request-method :post :server-name "juxt.pro") ; match route, method, and :server-name
       {:server-name "juxt.pro", :handler :post-zip-handler, :request-method :post})
     (is= nil (bidi/match-route route "/zip" :request-method :get :server-name "juxt.pro")) ; method mismatch => fail to match
-    (is= nil (bidi/match-route route "/zip" :request-method :post :server-name "juxt.other")) ; server mismatch => fail to match
-    ))
-
-
-
-
-
-
+    (is= nil (bidi/match-route route "/zip" :request-method :post :server-name "juxt.other"))) ; server mismatch => fail to match
+  )
 
 
 

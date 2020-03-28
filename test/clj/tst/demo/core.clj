@@ -61,6 +61,16 @@
     (is= (bidi/match-route routes "/items/abc" :request-method :get)
       {:route-params {:id "abc"}, :handler :item-do, :request-method :get}))
 
+  (let [foo-handler (fn [& args] "dummy-handler")
+        routes      ["" {"/foo/" {[:id] foo-handler}}]
+        result      (bidi/match-route routes "/foo/123" :request-method :get)
+        handler     (grab :handler result)]
+    (is (wild-match? {:route-params   {:id "123"}
+                      :handler        :*
+                      :request-method :get}
+          result))
+    (is= "dummy-handler" (handler)))
+
 
   ; short version to match GET "/index.html"
   (let [route ["/index.html" {:get :index}]]
